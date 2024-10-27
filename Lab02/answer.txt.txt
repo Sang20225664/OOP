@@ -1,0 +1,4 @@
+Câu hỏi trong mục 8:
+	Nếu tạo một phương thức khởi tạo để khởi tạo DVD theo tiêu đề sau đó tạo phương thức khởi tạo để tạo DVD theo danh mục thì Java vẫn cho phép, vì:
+	Java cho phép tạo ra các phương thức khởi tạo (constructor) với cùng tên nhưng phải có danh sách tham số khác nhau (nạp chồng phương thức - construct overloading)
+	-> miễn là các constructor này khác nhau về kiểu hoặc số lượng tham số thì việc nạp chồng như trên hoàn toàn đc Java cho phép.
