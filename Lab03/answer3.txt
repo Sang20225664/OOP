@@ -1,0 +1,9 @@
+JAVA là ngôn ngữ Truyền tham trị (Pass By value) vì:
+Dù khi truyền giá trị kiểu  nguyên thủy hay đối tượng (Object) thì Java luôn truyền bản sao của giá trị hoặc tham chiếu:
+- Với kiểu nguyên thủy: giá trị của biến được sao chép -> thay đổi trên biến trong phương thức không ảnh hưởng đến các biến gốc bên ngoài.
+- Với đối tượng: Java truyền bản sao của tham chiếu (reference copy) tới đối tượng -> có thể thay đổi trạng thái của đối tượng thông qua tham chiếu, nhưng không thể thay đổi bản thân tham chiếu đó trỏ tới một đối tượng khác
+==> Kết luận: Java luôn truyền tham trị khi làm việc với đối tượng, có thể hơi giống với truyền tham chiếu vì có thể thay đổi trạng thái của đối tượng thông qua tham chiếu được truyền, nhưng ở đây tham chiếu là một bản sao và thay đổi tham chiếu không ảnh hướng đến biến tham chiếu ban đầu (khác biệt so với truyền tham chiếu - có thể thay đổi trạng thái đối tượng lẫn tham chiếu gốc)
+
+Ở ví dụ trong figure 3 và 4: hàm swap không thể thực hiện chức năng thay đổi và 2 biến jungleDVD và cinderellaDVD vẫn giữ nguyên giá trị ban đầu. 
+Điều này càng minh chứng rõ hơn Java là ngôn ngữ truyền tham trị: Khi gọi phương thức swap thì chỉ có bản sao của tham chiếu o1, o2 trong phương thức hoán đổi. Bất kỳ thay đổi nào lên nội dung của đối tượng được tham chiếu đều có hiệu lực, nhưng việc thay đổi bản thân tham chiếu (gán nó sang đối tượng khác) sẽ không ảnh hưởng đến tham chiếu ban đầu.
+Còn sau khi gọi phương thức changeTitle(), tiêu đề của JungleDVD bị thay đổi bởi vì phương thức này sử dụng phương thức setTitle(title) để thay đổi trực tiếp tiêu đề của đối tượng, thao tác trực tiếp trên nội dung của đối tượng đó trong bộ nhớ. (Tiêu đề của đối tượng ban đầu bị thay đổi thông qua setTitle(title))
