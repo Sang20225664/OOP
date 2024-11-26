@@ -1,0 +1,32 @@
+6.1 
+- Trong JOptionPane.showConfirmDialog, nếu người dùng chọn Cancel thì sẽ trả về JOptionPane.CANCEL_OPTION và kết quả hiển thị sẽ là "No" (vì điều kiện option = JOptionPane.YES_OPTION bị sai)
+
+- Có thể tùy chỉnh các lựa chọn trong JOptionPane bằng cách sử dụng phương thức showOptionDialog(), thay vì showConfirmDialog(). Phương thức này cho phép chỉ định một mảng các tùy chọn mà người dùng có thể chọn.
+ví dụ:
+import javax.swing.JOptionPane;
+
+public class CustomOptionDialog {
+    public static void main(String[] args) {
+        Object[] options = {"I do", "I don't"};
+        
+        int option = JOptionPane.showOptionDialog(null, 
+                "Do you agree to the terms?", 
+                "Custom Option Dialog", 
+                JOptionPane.YES_NO_OPTION, 
+                JOptionPane.QUESTION_MESSAGE, 
+                null, options, options[0]);
+        
+        if (option == JOptionPane.YES_OPTION) {
+            JOptionPane.showMessageDialog(null, "You've chosen: I do");
+        } else if (option == JOptionPane.NO_OPTION) {
+            JOptionPane.showMessageDialog(null, "You've chosen: I don't");
+        }
+        
+        System.exit(0);
+    }
+}
+
++ showOptionDialog() cho phép chỉ định mảng các tùy chọn trong tham số thứ 6 (options) và lựa chọn mặc định trong tham số thứ 7 (options[0]).
++ Kết quả từ hộp thoại (option) sẽ trả về JOptionPane.YES_OPTION hoặc JOptionPane.NO_OPTION dựa trên lựa chọn của người dùng.
+->đã có thể hiển thị một hộp thoại với các tùy chọn tùy chỉnh và hiển thị một thông báo tùy theo lựa chọn của người dùng.
+
