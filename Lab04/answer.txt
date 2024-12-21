@@ -1,0 +1,11 @@
+1. Lớp nào nên implement giao diện Comparable?
+Giao diện Comparable nên được implement trong các lớp cần so sánh và sắp xếp các đối tượng của lớp đó theo một quy tắc xác định. Trong trường hợp này, các lớp như DigitalVideoDisc, Book, và các loại phương tiện khác (e.g., CompactDisc, Media) có thể implement Comparable, nếu muốn so sánh và sắp xếp theo các tiêu chí nhất định.
+
+2. Phương thức compareTo() trong các lớp đó nên được triển khai như thế nào để phản ánh thứ tự mà chúng ta muốn?
+Phương thức compareTo() trong giao diện Comparable được sử dụng để xác định thứ tự so sánh của các đối tượng. Cách triển khai phương thức này phụ thuộc vào quy tắc sắp xếp cần áp dụng.
+
+3. Chúng ta có thể có hai quy tắc sắp xếp (theo tiêu đề rồi đến giá, và theo giá rồi đến tiêu đề) nếu sử dụng giao diện Comparable không?
+Không, trong giao diện Comparable, chỉ có thể có một quy tắc sắp xếp duy nhất được xác định trong phương thức compareTo(). Phương thức này chỉ có thể dùng để so sánh một tiêu chí duy nhất (ví dụ: theo tiêu đề hoặc theo giá). Tuy nhiên, có thể thay đổi thứ tự các tiêu chí trong phương thức compareTo() để thay đổi cách so sánh.
+
+4. Giả sử DVD có một quy tắc sắp xếp khác với các loại phương tiện khác (theo tiêu đề, sau đó là chiều dài giảm dần, rồi đến giá). Làm thế nào để thay đổi mã nguồn để hỗ trợ điều này?v
+Trong trường hợp này, lớp DigitalVideoDisc cần override phương thức compareTo() để định nghĩa quy tắc sắp xếp riêng cho DVD -> cho phép DVD được sắp xếp theo tiêu đề,  chiều dài giảm dần, hoặc giá.
